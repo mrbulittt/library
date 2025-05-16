@@ -1,0 +1,47 @@
+﻿<Window x:Class="library.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:library"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="450" Width="800" Background="#F5F5DC">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="190*"/>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Добавить книгу" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="38"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10 0 10 0">
+            <StackPanel>
+                <TextBlock Text="Введите название" Margin="0 0 10 0" FontSize="14"/>
+                <TextBox Background="#F5F5DC" Margin="0 0 10 0" Height="32"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Введите автора" Margin="0 0 10 0" FontSize="14"/>
+                <TextBox Background="#F5F5DC" Margin="0 0 10 0" Height="32"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Укажите жанр" Margin="0 0 10 0" FontSize="14"/>
+                <ComboBox Margin="0 0 10 0" Height="32">
+                    <ComboBoxItem Content="Фантастика" IsSelected="True"/>
+                    <ComboBoxItem Content="Поэзия"/>
+                    <ComboBoxItem Content="Роман"/>
+                    <ComboBoxItem Content="Детектив"/>
+                    <ComboBoxItem Content="Мистика"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Выберите дату добавления(default = today)" Margin="0 0 10 0" FontSize="14"/>
+                <Calendar Background="#F5F5DC" Margin="0 0 10 0" Height="171"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <TextBlock Text="Дайте рейтинг" FontSize="28"/>
+            
+        </StackPanel>
+        <Button Background="#F5F5DC" x:Name="SaveBtn" Click="SaveBtn_Click" Grid.Row="3" Height="35" Width="300" Content="Сохранить" FontSize="20"/>
+    </Grid>
+</Window>
