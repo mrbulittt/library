@@ -45,11 +45,55 @@
         </ListBox>
 
         <StackPanel Grid.Column="5" Grid.RowSpan="3">
-            
+            <StackPanel Margin="0 0 0 20">
+                <TextBlock Text="Статистика" FontSize="19" HorizontalAlignment="Center" 
+VerticalAlignment="Center" Margin="7"/>
+                <TextBlock Text="Количество книг:" FontSize="12" HorizontalAlignment="Left" 
+VerticalAlignment="Center" Margin="7" />
+                <TextBlock Text="Количество прочитанных:" FontSize="12" HorizontalAlignment="Left" 
+VerticalAlignment="Center" Margin="7" />
+                <TextBlock Text="Средний рейтинг:" FontSize="12" HorizontalAlignment="Left" 
+VerticalAlignment="Center" Margin="7" />
+            </StackPanel>
+            <StackPanel Margin="0 0 0 20">
+                <Button Content="Добавить" FontSize="19" HorizontalAlignment="Center" 
+VerticalAlignment="Center" Margin="7" Width="190" Background="#F5F5DC" BorderThickness="2"/>
+                <Button Content="Редактировать" FontSize="19" HorizontalAlignment="Center" 
+VerticalAlignment="Center" Margin="7" Width="190" Background="#F5F5DC" BorderThickness="2"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Поиск" FontSize="19" HorizontalAlignment="Center" 
+VerticalAlignment="Center" Margin="7"/>
+                <TextBox x:Name="SearchTextBox"
+         Width="190"
+         Height="30"
+         TextChanged="SearchTextBox_TextChanged"/>
+            </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="5">
-            
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="5" Orientation="Horizontal">
+            <ComboBox x:Name="CategoryFilterComboBox"
+          Width="250"
+          Height="90"
+          Margin="0 0 10 0"
+          SelectionChanged="CategoryFilterComboBox_SelectionChanged">
+                <ComboBoxItem Content="Без фильтра" IsSelected="True"/>
+                <ComboBoxItem Content="По жанру"/>
+                <ComboBoxItem Content="По статусу"/>
+                <ComboBoxItem Content="По минимальному рейтингу"/>
+                
+            </ComboBox>
+            <ComboBox x:Name="SortComboBox"
+          Width="290"
+          Height="90"
+          Margin="0 0 10 0"
+          SelectionChanged="SortComboBox_SelectionChanged">
+                <ComboBoxItem Content="Без сортировки" IsSelected="True"/>
+                <ComboBoxItem Content="По дате(по возрастанию)"/>
+                <ComboBoxItem Content="По дате(по убыванию)"/>
+                <ComboBoxItem Content="По статусу"/>
+                <ComboBoxItem Content="По категории"/>
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Window>
