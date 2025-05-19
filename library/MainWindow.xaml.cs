@@ -76,10 +76,10 @@ namespace library
 
             addWindow.BookAdded += book =>
             {
-                SubscribeToBook(book); // подписываемся на PropertyChanged
+                SubscribeToBook(book); 
                 allBooks.Add(book);
                 LibrListLb.Items.Refresh();
-                UpdateStatistics(); // вызываем обновление
+                UpdateStatistics(); 
             };
 
 
