@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:library"
         mc:Ignorable="d"
-        Title="Главная страница" Height="600" Width="1000" Background="#F5F5DC">
+        Title="Главная страница" Icon="/Images/225993 (1).ico" Height="600" Width="1000" Background="#F5F5DC">
     
     <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -34,9 +34,9 @@
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <CheckBox IsChecked="{Binding IsDone}" VerticalAlignment="Center" Margin="5"/>
 
-                        <TextBlock Text="{Binding Title}" Width="100"/>
-                        <TextBlock Text="{Binding Author}" Width="100" Margin="10 0 0 0"/>
-                        <TextBlock Text="{Binding Genre}" Width="100" Margin="10 0 0 0"/>
+                        <TextBox Text="{Binding Title}" Width="100"/>
+                        <TextBox Text="{Binding Author}" Width="100" Margin="10 0 0 0"/>
+                        <TextBox Text="{Binding Genre}" Width="100" Margin="10 0 0 0"/>
 
                         <ComboBox ItemsSource="{x:Static local:MainWindow.RatingItems}"
           SelectedItem="{Binding Rating}"
@@ -105,9 +105,9 @@
         </StackPanel>
 
         <GridSplitter Grid.Column="4" Width="5" Background="Gray"/>
-        <StackPanel Grid.Column="5" Background="#F5F5DC"  Visibility="Visible">
+        <StackPanel Grid.Column="5" Background="#F5F5DC"  Visibility="Visible" Height="70">
             <TextBlock Text="Описание книги:" FontWeight="Bold" Margin="0 0 10 0"/>
-            <TextBlock x:Name="DescriptionTextBlock" TextWrapping="Wrap"/>
+            <TextBlock x:Name="DescriptionTextBlock" TextWrapping="Wrap" Height="50" />
         </StackPanel>
     </Grid>
 </Window>
